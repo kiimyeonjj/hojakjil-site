@@ -9,10 +9,10 @@ export const questions = [
   },
   {
     number: '02',
-    question: '우선 자리에 앉으려는데<br>나는 어느 자리에 앉을까?',
+    question: '우선 자리에 앉으려는데 나는 어느 자리에 앉을까?',
     choices: [
       { text: '늘 앉던 익숙한 자리', value: 's' },
-      { text: '오늘은 그림을 그려볼까?<br>스케치북이 있는 큰 테이블 자리', value: 'n' }
+      { text: '오늘은 그림을 그려볼까? 스케치북이 있는 큰 테이블 자리', value: 'n' }
     ]
   },
   {
@@ -51,7 +51,7 @@ export const questions = [
     number: '07',
     question: '카페에서 깜짝 고백을 받으면?',
     choices: [
-      { text: "'음.. 일단 생각해보겠습니다..'<br>하고 얼버무린다", value: 'f' },
+      { text: "'음.. 일단 생각해보겠습니다..'하고 얼버무린다", value: 'f' },
       { text: '확실하게 거절한다', value: 't' }
     ]
   },
@@ -67,7 +67,7 @@ export const questions = [
     number: '09',
     question: '길을 걷다 애매하게 아는 사람과 마주친다면',
     choices: [
-      { text: "'혹시 oo분 아니세요?' 하며<br>반갑게 인사한다", value: 'e' },
+      { text: "'혹시 oo분 아니세요?' 하며 반갑게 인사한다", value: 'e' },
       { text: '못 본 척 지나간다', value: 'i' }
     ]
   },
@@ -75,24 +75,23 @@ export const questions = [
     number: '10',
     question: '호작질 카페에서 스페셜 타르트 데이를 공지했다.',
     choices: [
-      { text: '인스타 디엠으로 예약 후<br>가장 먼저 신메뉴를 맛본다', value: 'j' },
-      { text: "마지막 날 급하게 가서<br>'사장님 아직 남아있나요?!!'(헉..헉...)", value: 'p' }
+      { text: '인스타 디엠으로 예약 후 가장 먼저 신메뉴를 맛본다', value: 'j' },
+      { text: "마지막 날 급하게 가서 '사장님 아직 남아있나요?!!'(헉..헉...)", value: 'p' }
     ]
   }
 ]
 
 export const results = [
   {//SP 그룹
-    title: '즉흥적인 게 제일 좋아!',
-    character: '/images/apple_cinnamon.png',
-    result_title: '/images/result_title1.png',
-    results: [
+    flavor: ['애플 시나몬'],
+    title_img: '/images/result_title_img_apple.png',
+    result_img: '/images/apple_cinnamon.png',
+    result_explain: [
       '∙ 물 흘러가듯 유연하게 살자~~' ,
       '∙ 이것도 괜찮고, 저것도 딱히 나쁘진 않은데? 하다가 아무거나 골라요',
       '∙ 계획이나 장기적 목표를 세우고 실천하는 것은 어려워요(ㅜㅜ)',
       '∙ 단순하지만 현실적이에요. 겉보기만큼 대책이 없지는 않아요. (선택을 못할 뿐...)'
     ],
-    flavor: ['애플 시나몬'],
     detail_text: "즉흥적인 경험으로<br>현실을 인식하는 당신!<br>'애플시나몬타르트'의<br>새콤달콤한 사과의 식감과<br>시나몬의 향긋함을 느껴보세요<br>당신에게 새로운<br>미각적 자극이 될 거에요😊 ",
     smartstoreImg: '/images/smartstore_thumbnail.png',
     smartstoreUrl: 'https://smartstore.naver.com/hojakjil4445/products/6749631192',
@@ -100,51 +99,49 @@ export const results = [
     onedayclassUrl: 'https://smartstore.naver.com/hojakjil4445/products/8058923656'
   },
   {//SJ 그룹
-    title: '프로직진러!<br>진행력 갑',
-    character: '/images/original.png',
+    flavor: ['오리지널'],
+    title_img: '/images/result_title_img_original.png',
+    result_img: '/images/original.png',
     result_title: '/images/result_title2.png',
-    results: [
+    result_explain: [
       '∙ 항상 같은 메뉴를 먹어도 아무렇지 않아요. 익숙한 게 좋아요',
       '∙ 일할 땐 일하고! 놀 땐 놀고! 뭐든 확실한 게 좋아요.',
       '∙ 전략적으로 계획을 세우고 실천하는 것을 좋아해요. 시간관리에 능통한 당신!',
       '∙ 이따금씩 의무와 책임감에 사로잡혀 스트레스를 받기도 해요😓'
     ],
     detail_text: "새로움보다는 안정적인 선택을 추구하는 당신!<br>호작질의 오리지널타르트는<br>포르투갈에서 배워온<br>정통 레시피 그대로 만들어요😊<br>남녀노소 호불호 없는<br>주문 수 베스트1위!<br>포르투갈 정통의 맛을 느껴보세요 ",
-    flavor: ['오리지널'],
     smartstoreImg: '/images/smartstore_thumbnail.png',
     smartstoreUrl: 'https://smartstore.naver.com/hojakjil4445/products/6749631192',
     onedayclassImg : '/images/onedayclass_thumbnail.png',
     onedayclassUrl: 'https://smartstore.naver.com/hojakjil4445/products/8058923656'
   },
   {//NF 그룹
-    title: '우리 무기는<br>상상력!',
-    character: '/images/corn.png',
-    result_title: '/images/result_title3.png',
-    results: [
+    flavor: ['옥수수'],
+    title_img: '/images/result_title_img_corn.png',
+    result_img: '/images/corn.png',
+    result_explain: [
       '∙ 나만의 개성을 찾는 것을 중요하게 여기기 때문에 새롭고 과감한 것에도 잘 도전해요',
       '∙ 생각을 멈출 수가 없어요. (생각 안 하는 거 어떻게 하는 건데…)',
       '∙ 사소한 것에도 의미 부여를 잘해요',
       '∙ 사람들과의 관계가 중요해요. 남에게 피해 끼치는 게 제일 싫어요😤'
     ],
     detail_text: "기분에 따라 생각이<br>빠르게 변하는 당신!<br> 호작질의 옥수수타르트는<br>으깬 옥수수와 달콤한 에그필링이 더해져 달콤고소하고<br>위에는 옥수수 크럼블이<br>올라가 바삭함이 두배!!<br>기존 에그타르트와는 다른 통통 튀는 맛을 느낄 수 있어요😉",
-    flavor: ['옥수수'],
     smartstoreImg: '/images/smartstore_thumbnail.png',
     smartstoreUrl: 'https://smartstore.naver.com/hojakjil4445/products/6749631192',
     onedayclassImg : '/images/onedayclass_thumbnail.png',
     onedayclassUrl: 'https://smartstore.naver.com/hojakjil4445/products/8058923656'
   },
   {//NT 그룹
-    title: '맛있는 데엔 이유가 있지 ',
-    character: '/images/cheese.png',
-    result_title: '/images/result_title4.png',
-    results: [
+    flavor: ['치즈'],
+    title_img: '/images/result_title_img_cheese.png',
+    result_img: '/images/cheese.png',
+    result_explain: [
       '∙ 어떤 행동이든 원인과 근거가 있어요. 논리적으로 맞고 틀리고가 가장 중요해요. (이건 뭐가 들어가서 맛있는 거지?)',
       '∙ 간결하고 직관적인 것을 선호해요',
       '∙ ‘왜?’라는 질문을 많이 해서 오해를 받을 때가 종종 있어요',
       '∙ 스스로에게 엄격해요. 부지런하게 자기 계발에 애쓰는 편이에요'
     ],
     detail_text: '객관적인 사실을 기반으로<br>사고하는 당신!<br>호작질의 치즈타르트는<br>끼리치즈(kiri)가 듬뿍 들어가서<br>더욱 부드럽고 진한 풍미가 느껴져요<br>아이들 간식은 물론,<br>와인 안주로 정말 좋아요🍷',
-    flavor: ['치즈'],
     smartstoreImg: '/images/smartstore_thumbnail.png',
     smartstoreUrl: 'https://smartstore.naver.com/hojakjil4445/products/6749631192',
     onedayclassImg : '/images/onedayclass_thumbnail.png',

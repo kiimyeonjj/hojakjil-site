@@ -1,69 +1,127 @@
+/* 기본 레이아웃 */
 body {
-    background-image: url("../images/questions_bg.png");
-    background-position: top center;
-    background-repeat: repeat;
+  background-color: rgb(255, 244, 207);
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard Variable";
+  word-break: keep-all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* 진행 바 */
+.progress {
+  width: 100%;
+  max-width: 100%;
+  height: 6px;
+  margin: 0 auto 40px;
+  box-shadow: 0 4px 25px #DDE2E8;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.progress .value {
+  height: 100%;
+  background-color: #ff892f;
+  transition: width 0.2s ease;
+}
+
+
+/* 질문 박스 */
+.question-box {
+  width: 100%;
+  padding: 50px 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  height: 460px;
+  background-color: transparent;
+  background-image: url("../images/questionbox_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+
+.question-box .number {
+  margin-bottom: 24px;
+  font-weight: 900;
+  font-size: 40px;
+  text-align: center;
+  color: #ff892f;
+}
+
+
+.question-box .question {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+
+/* 질문 페이지 전용 버튼 */
+.question-btn {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  max-width: 280px;
+  padding: 0 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50px;
+  margin: 16px auto;
+  height: 70px;
+  cursor: pointer;
+  user-select: none;
+  word-break: keep-all;
+  text-wrap: pretty;
+  transition: 0.1s;
+}
+
+.question-btn:active {
+  transform: translateY(10px);
+}
+
+.question-box .choice {
+  border-radius: 120px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* 모바일 대응 */
+@media (max-width: 360px) {
+  body {
+    padding-top: 6vh;
   }
-  .progress {
-    max-width: 500px;
-    height: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 60px;
-    border-radius: 10px;
-    background-color: #FFFFFF;
+
+  .container {
+    padding: 0 12px;
   }
-  .progress .value {
-    width: 10%;
-    height: 20px;
-    background-color: #ff892f;
-    border-radius: 10px;
-    transition: 0.2s;
-  }
+
   .question-box {
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 40px;
-    padding-right: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 25px #DDE2E8;
-    background-color: #FFFFFF;
+    padding: 40px 20px;
+    height: 400px;
   }
-  
+
   .question-box .number {
-    margin-bottom: 30px;
-    font-weight: 900;
-    font-size: 60px;
-    text-align: center;
-    color: #ff892f;
+    font-size: 40px;
   }
+
   .question-box .question {
-    margin-bottom: 40px;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 1.5;
-    text-align: center;
+    font-size: 18px;
   }
+
   .question-box .choice {
-    
-    border-radius: 120px;
-    font-size: 22px;
+    font-size: 16px;
   }
-  
-  @media (max-width: 640px) {
-    .progress {
-      margin-bottom: 30px;
-    }
-    .question-box {
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-    .question-box .question {
-      font-size: 28px;
-    }
-    .question-box .choice {
-      font-size: 20px;
-    }
-  }
+}

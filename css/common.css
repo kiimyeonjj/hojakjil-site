@@ -1,204 +1,125 @@
-
-body{
-    font-family:"Pretendard Variable", sans-serif;
+/* 공통 기본 스타일 */
+body {
+    font-family: "Pretendard Variable";
+    background-color: rgb(255, 244, 207);
+    margin: 0;
+    padding: 0;
     word-break: keep-all;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    margin-right: auto;
-    margin-left: auto;
-    
-    }
-    .center{
-        display: flex;
-        justify-content: center;
-    }
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
 
-    .main_title {
-        display: flex;
-        justify-content: center;
-        width: 380px;
-        height: 100px;
-    }
-    
-    .center2{
-        display: flex;
-        justify-content: center;
-    }
+.container {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+  
 
-    .main_character{
-        display: flex;
-        justify-content: center;
-        width: 380px;
-        height: 360px;
-    }
+/* 헤더 바 */
+.header-bar {
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
+    height: 50px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+  
+/* 로고 이미지 */
+.header-logo {
+    height: 50px;
+    width: auto;
+}
 
-    .btn{
-        max-width: 310px;
-        height:95px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 25px;
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 750;
-        font-size: 35px;
-        line-height: 1.4;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-        user-select: none;
-        transition: 0.1s;
+  
+  /* 메인 내용 래퍼 */
+.intro-wrapper {
+    margin-top: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+/* 인트로 이미지 */
+.intro_visual {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 30px auto 30px;
+}
+  
+/* 공통 버튼 */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    height: 60px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 50px;
+    margin: 10px auto;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+  
+.btn:active {
+    transform: translateY(4px);
+}
+  
+/* 모바일 전용 안내문 */
+.mobile-notice {
+    font-size: 14px;
+    color: #888888;
+    text-align: center;
+    margin-top: 8px;
+}
+  
+/* ✅ 모바일 대응 */
+@media (max-width: 400px) {
+    .box {
+      font-size: 18px;
+      padding: 18px 12px;
     }
-
-    .btn2{
-        max-width: 350px;
-        height: 100px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 35px;
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 1.4;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-        user-select: none;
-        transition: 0.1s;
+  
+    .detail_text {
+      font-size: 18px;
+      line-height: 1.6;
     }
-
-    .btn3{
-        max-width: 310px;
-        height: 95px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 35px;
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 1.4;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-        user-select: none;
-        transition: 0.1s;
+  
+    .link_text {
+      font-size: 18px;
     }
-
-    .btn-start{
-        background-color: #F2F4F6;
-        box-shadow: 0 14px 0 #DFE1E2;
-        color: #444444;
-        border-radius: 50px;
-        margin-top: 10px;
-
+  
+    .link_text3 {
+      font-size: 16px;
     }
-    .btn-start:active{
-        transform:translateY(10px);
+  
+    .smartstore img,
+    .onedayclass img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 32px;
     }
-
-    .btn-question{
-        background-color: #F2F4F6;
-        box-shadow: 0 14px 0 #DFE1E2;
-        color: #444444;
+  
+    .btn {
+      font-size: 16px;
+      height: 60px;
     }
-
-    .btn-question:active{
-        transform:translateY(10px);
-    }
-
-    .btn-result{
-        background-color: #F2F4F6;
-        box-shadow: 0 14px 0 #DFE1E2;
-        border-radius: 50px;
-        color: #444444;
-    }
-
-    .btn-result:active{
-        transform:translateY(10px);
-    }
-    
- 
-    .container1{
-        margin-bottom: 50px;
-        height: auto;
-        border: solid 2px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-        background-color: #ffffff;
-    }
-
-    .container2{
-        margin-bottom: 50px;
-        height: auto;
-        border: solid 2px;
-        padding-bottom: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #ffffff;
-    }
-
-    .container3{
-        margin-bottom: 50px;
-        height: auto;
-        border: solid 2px;
-        padding-top: 50px;
-        padding-bottom: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #ffffff;
-    }
-
-    @keyframes rotate{
-        0%{
-            transform: translateY(0);
-        }
-        20%{
-            transform: translateY(-25%);
-        }
-        40%{
-            transform: translateY(-50%);
-        }
-        60%{
-            transform: translateY(-75%);
-        }
-        80%{
-            transform: translateY(-100%);
-        }
-    }
-    .type{
-        font-size: 45px;
-        line-height: 3em;
-        height: 3em;
-        overflow:hidden;
-        text-align: center;
-    }
-    
-    .type_list{
-        animation: rotate 6s infinite;
-    }
-    @media (max-width: 600px) {
-        body {
-        padding-top: 33px;
-        padding-bottom: 33px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-        .btn {
-        font-size: 35px;
-        }
-    }
-    
+  }
