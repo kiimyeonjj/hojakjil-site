@@ -2,6 +2,7 @@
 body {
     font-family: "Pretendard Variable";
     background-color: rgb(255, 244, 207);
+    height: 100%;
     margin: 0;
     padding: 0;
     word-break: keep-all;
@@ -13,8 +14,10 @@ body {
   
 
 .container {
+    min-height: 100vh;
     width: 100%;
     max-width: 420px;
+    /* background-color: #ffffff; */
     box-sizing: border-box;
     margin: 0 auto;
 }
@@ -26,7 +29,6 @@ body {
     max-width: 420px;
     box-sizing: border-box;
     height: 50px;
-    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,18 +59,63 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    margin: 30px auto 30px;
+    margin: 50px auto 0;
 }
+
+
+.type {
+  width: 100%;
+  max-width: 230px;
+  height: 230px;
+  overflow: hidden;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+.type img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  animation: imageFadeZoom 8s infinite ease-in-out;
+}
+
+.type img:nth-child(1) { animation-delay: 0s; }
+.type img:nth-child(2) { animation-delay: 2s; }
+.type img:nth-child(3) { animation-delay: 4s; }
+.type img:nth-child(4) { animation-delay: 6s; }
+
+@keyframes imageFadeZoom {
+  0%   { opacity: 0; transform: scale(1); }
+  5%   { opacity: 1; transform: scale(1.05); }
+  25%  { opacity: 1; transform: scale(1.05); }
+  30%  { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
   
+/* 클릭 이미지 */
+.click_visual {
+    display: block;
+    width: 20%;
+    height: auto;
+    margin: 40px auto 15px;
+}
+
+
 /* 공통 버튼 */
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 300px;
-    height: 60px;
-    font-size: 16px;
+    max-width: 280px;
+    height: 65px;
+    font-size: 21px;
     font-weight: bold;
     background-color: #000000;
     color: #ffffff;
@@ -85,41 +132,24 @@ body {
   
 /* 모바일 전용 안내문 */
 .mobile-notice {
-    font-size: 14px;
+    font-size: 15px;
     color: #888888;
     text-align: center;
-    margin-top: 8px;
+    margin: 15px auto 10px;
 }
   
 /* ✅ 모바일 대응 */
 @media (max-width: 400px) {
-    .box {
-      font-size: 18px;
-      padding: 18px 12px;
+    .type {
+      height: 230px; /* 줄어든 화면에 맞춰 높이 조정 */
     }
-  
-    .detail_text {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-  
-    .link_text {
-      font-size: 18px;
-    }
-  
-    .link_text3 {
-      font-size: 16px;
-    }
-  
-    .smartstore img,
-    .onedayclass img {
-      width: 100%;
-      border-radius: 16px;
-      margin-bottom: 32px;
+
+    .type_list img {
+      height: 230px;
     }
   
     .btn {
-      font-size: 16px;
+      font-size: 21px;
       height: 60px;
     }
   }

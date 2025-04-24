@@ -10,15 +10,24 @@ body {
   align-items: center;
 }
 
+.inner-wrapper {
+  width: 100%;
+  max-width: 460px;
+  padding: 0 16px; /* 원하는 좌우 여백 */
+  box-sizing: border-box;
+}
+
 
 /* 진행 바 */
 .progress {
   width: 100%;
   max-width: 100%;
-  height: 6px;
-  margin: 0 auto 40px;
+  height: 13px;
+  margin: 30px auto 30px;
   box-shadow: 0 4px 25px #DDE2E8;
+  border-radius: 30px;
   background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
@@ -32,32 +41,30 @@ body {
 /* 질문 박스 */
 .question-box {
   width: 100%;
-  padding: 50px 20px;
-  padding-right: 10px;
-  padding-left: 10px;
-  height: 460px;
-  background-color: transparent;
-  background-image: url("../images/questionbox_bg.png");
+  padding: 60px 10px;
+  height: 520px;
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 10px;
   box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 
 .question-box .number {
-  margin-bottom: 24px;
   font-weight: 900;
-  font-size: 40px;
+  font-size: 55px;
   text-align: center;
   color: #ff892f;
 }
 
 
 .question-box .question {
-  margin-bottom: 40px;
+  margin: 30px auto 40px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1.5;
   text-align: center;
   text-wrap: pretty;
@@ -72,14 +79,14 @@ body {
   align-items: center;
   width:100%;
   max-width: 280px;
+  height: 75px;
   padding: 0 24px;
-  font-size: 16px;
+  font-size: 18px;
+  border-radius: 50px;
   font-weight: 600;
   background-color: #000000;
   color: #ffffff;
-  border-radius: 50px;
   margin: 16px auto;
-  height: 70px;
   cursor: pointer;
   user-select: none;
   word-break: keep-all;
@@ -104,8 +111,12 @@ body {
     padding-top: 6vh;
   }
 
-  .container {
+  /* .container {
     padding: 0 12px;
+  } */
+
+  .inner-wrapper {
+    padding: 0 10px;
   }
 
   .question-box {
@@ -114,14 +125,14 @@ body {
   }
 
   .question-box .number {
-    font-size: 40px;
+    font-size: 55px;
   }
 
   .question-box .question {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   .question-box .choice {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
