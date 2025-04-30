@@ -51,7 +51,7 @@ export const questions = [
     number: '07',
     question: '카페에서 깜짝 고백을 받으면?',
     choices: [
-      { text: "'음.. 일단 생각해보겠습니다..'하고 얼버무린다", value: 'f' },
+      { text: "'음.. 일단 생각해보겠습니다..'<br>하고 얼버무린다", value: 'f' },
       { text: '확실하게 거절한다', value: 't' }
     ]
   },
