@@ -1,63 +1,122 @@
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-1Thin.woff2") format("woff2");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-2ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-3Light.woff2") format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-4Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-5Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-6SemiBold.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-7Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-8ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Paperlogy";
+  src: url("/fonts/Paperlogy-9Black.woff2") format("woff2");
+  font-weight: 900;
+}
+
+
+
 /* 공통 기본 스타일 */
 body {
-    font-family: "Pretendard Variable";
-    background-color: rgb(255, 244, 207);
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    word-break: keep-all;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  font-family: "Paperlogy", sans-serif;
+  background-color: rgb(255, 244, 207);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   
 
 .container {
-    min-height: 100vh;
-    width: 100%;
-    max-width: 420px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
 }
   
 
 /* 헤더 바 */
-.header-bar {
-    width: 100%;
-    max-width: 420px;
-    box-sizing: border-box;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 999;
+.header_bar {
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
   
 /* 로고 이미지 */
-.header-logo {
-    height: 50px;
-    width: auto;
+.header_logo {
+  height: 50px;
+  width: auto;
 }
 
 
-.intro-wrapper {
+.intro_wrapper {
   width: 100%;
-  margin: 35px auto;
+  margin: 40px auto;
   max-width: 460px;
   box-sizing: border-box;
   align-items: center;
 }
-  
-/* 인트로 이미지 */
-.intro_visual {
-  display: block;
-  width: 100%;
-  margin: auto;
+
+
+.intro_title1 {
+  font-family: "Paperlogy";
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #FF8D00;
+  text-align: center;
+}
+
+.intro_title2 {
+  font-family: "Paperlogy";
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 10px auto 20px;
 }
 
 
@@ -98,30 +157,38 @@ body {
   
 /* 클릭 이미지 */
 .click_visual {
-    display: block;
-    width: 20%;
-    height: auto;
-    margin: 20px auto;
+  display: block;
+  width: 20%;
+  height: auto;
+  margin: 20px auto;
+  /* animation: floatUpDown 1s ease-in-out infinite;
+  will-change: transform; */
 }
+
+/* @keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+} */
 
 
 /* 공통 버튼 */
-.btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 280px;
-    height: 65px;
-    font-size: 21px;
-    font-weight: bold;
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: 50px;
-    margin: 10px auto;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.1s;
+.start_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 280px;
+  height: 65px;
+  font-size: 21px;
+  font-weight: 700;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50px;
+  margin: 10px auto;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.1s;
 }
   
 .btn:active {
@@ -129,11 +196,11 @@ body {
 }
   
 /* 모바일 전용 안내문 */
-.mobile-notice {
-    font-size: 15px;
-    color: #888888;
-    text-align: center;
-    margin-top: 15px;
+.mobile_notice {
+  font-size: 15px;
+  color: #888888;
+  text-align: center;
+  margin-top: 15px;
 }
   
 /* ✅ 모바일 대응 */

@@ -1,9 +1,9 @@
-/* 공통 배경 및 폰트 설정 */
+
 body {
+  font-family: "Paperlogy", sans-serif;
   background-color: rgb(255, 244, 207);
   margin: 0;
   padding: 0;
-  font-family: "Pretendard Variable", sans-serif;
   word-break: keep-all;
   display: flex;
   flex-direction: column;
@@ -11,20 +11,13 @@ body {
   min-height: 100vh;
 }
 
-.title_img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 45px auto 20px;
-}
 
-
-/* 결과 이미지 */
+/* 결과 에그타르트 이미지 */
 .result_img {
   display: block;
   width: 100%;
   height: auto;
-  margin: 10px auto 20px;
+  margin: 40px auto 20px;
 }
 
 /* 결과 설명 박스들 */
@@ -42,66 +35,92 @@ body {
 }
 
 /* 디테일 설명 섹션 */
-.detail_title,
-.smartstore_title,
-.onedayclass_title {
+.detail_title{
   display: block;
   width: 100%;
   margin: 30px 0 20px;
 }
 
-.detail_text {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.8;
-  text-align: center;
-  color: #000000;
-  margin-bottom: 40px;
-}
 
-/* flavor */
-.flavor {
-  font-size: 16px;
-  font-weight: 500;
-  color: #222;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* 스마트스토어 / 클래스 이미지 */
-.smartstore img,
-.onedayclass img {
+/* 스마트스토어 마케팅 이미지 */
+.smartstore_visual {
+  display: block;
   width: 100%;
   height: auto;
-  background-color: #fff;
-  border-radius: 20px;
-  margin: 16px auto 40px;
-  display: block;
-  filter: drop-shadow(5px 5px 7px #C3C3C3);
+  margin: auto;
 }
 
-/* 링크 안내 텍스트 */
-.link_text {
-  font-size: 20px;
+/* 스마트스토어 CTA 버튼 */
+.smartstore_CTA_btn {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  max-width: 280px;
+  height: 65px;
+  padding: 0 24px;
+  border-radius: 50px;
   font-weight: 600;
-  text-align: center;
-  color: #000;
-  margin-bottom: 8px;
+  background-color: #FF8D00;
+  color: #000000;
+  margin: 16px auto;
+  cursor: pointer;
+  user-select: none;
+  word-break: keep-all;
+  text-wrap: pretty;
 }
 
-.link_text2 {
-  font-size: 14px;
-  font-weight: 400;
-  text-align: center;
-  color: #999;
+/* 스마트스토어 CTA 버튼 */
+.smartstore_CTA_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  height: 55px;
+  font-size: 15px;
+  background-color: #FF8D00;
+  color: #000000;
+  border-radius: 50px;
+  margin: 10px auto;
+  text-decoration: none;
 }
 
-.link_text3 {
+/* 공유 버튼 */
+.share_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  height: 55px;
   font-size: 18px;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  font-weight: 700;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50px;
+  margin: 10px auto;
+  text-decoration: none;
 }
+
+/*다시 테스트 버튼*/
+.retest_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  height: 55px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50px;
+  margin: 10px auto 90px;
+  text-decoration: none;
+}
+
 
 /* 반응형 대응 */
 @media (max-width: 400px) {
@@ -115,18 +134,8 @@ body {
     line-height: 1.6;
   }
 
-  .link_text {
-    font-size: 18px;
-  }
-
-  .link_text3 {
-    font-size: 16px;
-  }
-
-  .smartstore img,
-  .onedayclass img {
+  .smartstore img {
     width: 100%;
-    border-radius: 16px;
     margin-bottom: 32px;
   }
 
