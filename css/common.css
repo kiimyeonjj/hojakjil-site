@@ -80,6 +80,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -95,7 +96,7 @@ body {
 
 .intro_wrapper {
   width: 100%;
-  margin: 40px auto;
+  margin: 35px auto;
   max-width: 460px;
   box-sizing: border-box;
   align-items: center;
@@ -122,8 +123,8 @@ body {
 
 .type {
   width: 100%;
-  max-width: 220px;
-  height: 220px;
+  max-width: 200px;
+  height: 200px;
   overflow: hidden;
   margin: auto;
   position: relative;
@@ -134,7 +135,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: contain;
   object-position: center;
   opacity: 0;
@@ -206,11 +207,11 @@ body {
 /* ✅ 모바일 대응 */
 @media (max-width: 400px) {
     .type {
-      height: 230px;
+      height: 200px;
     }
 
     .type_list img {
-      height: 230px;
+      height: 200px;
     }
   
     .btn {

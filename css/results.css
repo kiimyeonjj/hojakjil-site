@@ -17,28 +17,16 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  margin: 40px auto 20px;
+  margin: 40px auto;
 }
 
-/* 결과 설명 박스들 */
-.box {
-  min-height: 70px;
-  padding: 20px 16px;
-  border-radius: 20px;
-  background-color: transparent;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: left;
-  margin-bottom: 12px;
-  box-sizing: border-box;
-}
 
-/* 디테일 설명 섹션 */
-.detail_title{
+/* 디테일 설명 이미지 */
+.detail_img {
   display: block;
-  width: 100%;
-  margin: 30px 0 20px;
+  width: 95%;
+  height: auto;
+  margin: 20px auto 50px ;
 }
 
 
@@ -50,26 +38,14 @@ body {
   margin: auto;
 }
 
-/* 스마트스토어 CTA 버튼 */
-.smartstore_CTA_btn {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  max-width: 280px;
-  height: 65px;
-  padding: 0 24px;
-  border-radius: 50px;
-  font-weight: 600;
-  background-color: #FF8D00;
-  color: #000000;
-  margin: 16px auto;
-  cursor: pointer;
-  user-select: none;
-  word-break: keep-all;
-  text-wrap: pretty;
+/* 스마트스토어 마케팅 이미지 */
+.smartstore_visual2 {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 40px auto 40px;
 }
+
 
 /* 스마트스토어 CTA 버튼 */
 .smartstore_CTA_btn {
@@ -80,6 +56,7 @@ body {
   max-width: 250px;
   height: 55px;
   font-size: 15px;
+  font-weight: 600;
   background-color: #FF8D00;
   color: #000000;
   border-radius: 50px;
@@ -94,7 +71,7 @@ body {
   align-items: center;
   width: 100%;
   max-width: 300px;
-  height: 55px;
+  height: 60px;
   font-size: 18px;
   font-weight: 700;
   background-color: #000000;
@@ -104,14 +81,14 @@ body {
   text-decoration: none;
 }
 
-/*다시 테스트 버튼*/
+/*다시 테스트하기 버튼*/
 .retest_btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 300px;
-  height: 55px;
+  height: 60px;
   font-size: 18px;
   font-weight: 700;
   background-color: #000000;
@@ -124,19 +101,4 @@ body {
 
 /* 반응형 대응 */
 @media (max-width: 400px) {
-  .box {
-    font-size: 18px;
-    padding: 18px 14px;
-  }
-
-  .detail_text {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-  .smartstore img {
-    width: 100%;
-    margin-bottom: 32px;
-  }
-
 }

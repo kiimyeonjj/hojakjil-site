@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalMbti = extractValidMbti(mbti); // 🎯 여기서 4자 추출
     const code = mbtiToCode[finalMbti];
 
-    console.log('🧠 최종 MBTI:', finalMbti);
-    console.log('🔐 변환된 코드:', code);
+    console.log('최종 MBTI:', finalMbti);
+    console.log('변환된 코드:', code);
 
     // 이동
     location.href = '/results?code=' + code;
