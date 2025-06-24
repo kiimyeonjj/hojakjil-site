@@ -31,15 +31,23 @@ body {
 
 
 /* 스마트스토어 마케팅 이미지 */
-.smartstore_visual {
+.smartstore_visual1 {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 20px auto 0px;
+}
+
+/* 스마트스토어 마케팅 이미지 */
+.smartstore_visual2 {
   display: block;
   width: 100%;
   height: auto;
   margin: auto;
 }
 
-/* 스마트스토어 마케팅 이미지 */
-.smartstore_visual2 {
+/* 레시피 이미지 */
+.recipe_visual {
   display: block;
   width: 100%;
   height: auto;
@@ -55,7 +63,7 @@ body {
   width: 100%;
   max-width: 250px;
   height: 55px;
-  font-size: 15px;
+  font-size: 16.5px;
   font-weight: 600;
   background-color: #FF8D00;
   color: #000000;

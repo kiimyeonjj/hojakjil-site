@@ -7,7 +7,9 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-QT1Z2YP647');
+    gtag('config', 'G-QT1Z2YP647',{
+      'page_path': '/'
+    });
   </script>
 
   <!-- GTM -->
@@ -69,15 +71,23 @@
     <img src="" alt="결과 이미지" class="result_img" />
     <img src="" alt="디테일 설명 이미지" class="detail_img" />
 
+    <img src="/images/smartstore_visual1.png" alt="스마트스토어 이미지" class="smartstore_visual1" />
     <a href="https://smartstore.naver.com/hojakjil4445/products/6749631192" target="_blank">
-      <img src="/images/smartstore_visual.png" alt="스마트스토어 이미지" class="smartstore_visual" />
+      <img src="/images/smartstore_visual2.png" alt="스마트스토어 이미지" class="smartstore_visual2" />
     </a>
     <a href="https://smartstore.naver.com/hojakjil4445/products/6749631192" class="smartstore_CTA_btn">지금 보러가기</a>
-    <img src="/images/smartstore_visual2.png" alt="스마트스토어 이미지" class="smartstore_visual2" />
+    <img src="/images/recipe_visual.png" alt="레시피 이미지" class="recipe_visual" />
 
     <!-- 버튼들 -->
     <div class="share_btn share-or-copy">친구에게 공유하기</div>
     <a href="/" class="retest_btn">다시 테스트하기</a>
+
+    <script>
+      document.querySelector('.retry-btn').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = '/index.html';
+      });
+    </script>
   </div>
 </body>
 </html>

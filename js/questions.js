@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return e_or_i + s_or_n + t_or_f + j_or_p;
   }
 
+
   // 질문 렌더링
   function renderQuestion() {
     const question = questions[currentNumber];
@@ -43,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
       choice1El.innerHTML = question.choices[0].text;
       choice2El.innerHTML = question.choices[1].text;
       progressValueEl.style.width = ((currentNumber + 1) / questions.length) * 100 + '%';
+      
+       // gtag 이벤트 트래킹
+      gtag('event', 'question_view', {
+        question_number: question.number,
+        question_index: currentNumber + 1,
+        event_category: 'progress',
+        event_label: '질문 도달',
+        value: currentNumber + 1
+      });
     }
   }
 
