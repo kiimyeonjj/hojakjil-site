@@ -219,3 +219,41 @@ body {
       height: 60px;
     }
   }
+
+
+/* 다크모드 무효 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(255, 244, 207) !important;
+    color: #000000 !important;
+  }
+
+  .header_bar,
+  .question_box,
+  .progress,
+  .share_btn,
+  .retest_btn,
+  .smartstore_CTA_btn,
+  .start_btn,
+  .question_btn {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+
+  img,
+  .result_img,
+  .smartstore_visual,
+  .smartstore_visual2,
+  .detail_img {
+    filter: none !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .intro_title1,
+  .intro_title2,
+  .question_box .question,
+  .question_box .number {
+    color: #000000 !important;
+  }
+}
