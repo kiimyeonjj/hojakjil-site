@@ -162,15 +162,15 @@ body {
   width: 20%;
   height: auto;
   margin: 20px auto;
-  /* animation: floatUpDown 1s ease-in-out infinite;
-  will-change: transform; */
+  animation: floatUpDown 1s ease-in-out infinite;
+  will-change: transform;
 }
 
-/* @keyframes floatUpDown {
+@keyframes floatUpDown {
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-4px); }
+  50%  { transform: translateY(-3px); }
   100% { transform: translateY(0); }
-} */
+}
 
 
 /* 공통 버튼 */

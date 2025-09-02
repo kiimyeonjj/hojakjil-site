@@ -31,11 +31,11 @@ body {
 
 
 /* 스마트스토어 마케팅 이미지 */
-.smartstore_visual {
+.smartstore_visual1 {
   display: block;
   width: 100%;
   height: auto;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* 스마트스토어 마케팅 이미지 */
@@ -43,7 +43,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  margin: 40px auto 40px;
+  margin: 0 auto 20px;
 }
 
 
@@ -63,6 +63,16 @@ body {
   margin: 10px auto;
   text-decoration: none;
 }
+
+
+/* 스마트스토어 마케팅 이미지 */
+.recipe {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 50px auto 50px;
+}
+
 
 /* 공유 버튼 */
 .share_btn {

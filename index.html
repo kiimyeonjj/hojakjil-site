@@ -19,6 +19,19 @@
   })(window,document,'script','dataLayer','GTM-T45GH3BZ');
   </script>
 
+  <!-- GA user_property 설정 (기존 사용자 구분을 위해서 하드코딩)-->
+  <script>
+    gtag('set', 'user_properties', {
+      ab_test_group: 'original'
+    });
+
+    gtag('event', 'page_loaded', {
+      ab_test_group: 'original',
+      event_category: 'ab_test'
+    });
+  </script>
+
+
   <!-- Clarity GTM -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){

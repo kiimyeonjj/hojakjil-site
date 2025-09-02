@@ -10,6 +10,18 @@
     gtag('config', 'G-QT1Z2YP647');
   </script>
 
+  <!-- GA user_property 설정 (기존 사용자 구분을 위해서 하드코딩)-->
+  <script>
+    gtag('set', 'user_properties', {
+      ab_test_group: 'original'
+    });
+
+    gtag('event', 'page_loaded', {
+      ab_test_group: 'original',
+      event_category: 'ab_test'
+    });
+  </script>
+
   <!-- GTM -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
@@ -69,11 +81,11 @@
     <img src="" alt="결과 이미지" class="result_img" />
     <img src="" alt="디테일 설명 이미지" class="detail_img" />
 
-    <a href="https://smartstore.naver.com/hojakjil4445/products/6749631192" target="_blank">
-      <img src="/images/smartstore_visual.png" alt="스마트스토어 이미지" class="smartstore_visual" />
-    </a>
-    <a href="https://smartstore.naver.com/hojakjil4445/products/6749631192" class="smartstore_CTA_btn">지금 보러가기</a>
+    <img src="/images/smartstore_visual1.png" alt="스마트스토어 이미지" class="smartstore_visual1" />
     <img src="/images/smartstore_visual2.png" alt="스마트스토어 이미지" class="smartstore_visual2" />
+    <a href="https://smartstore.naver.com/hojakjil4445/products/6749631192" target="_blank" class="smartstore_CTA_btn">지금 보러가기</a>
+
+    <img src="/images/recipe.png" alt="레시피 이미지" class="recipe" />
 
     <!-- 버튼들 -->
     <div class="share_btn share-or-copy">친구에게 공유하기</div>
