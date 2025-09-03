@@ -109,7 +109,48 @@ body {
 }
 
 
-/* 반응형 대응 */
+.share-sheet.hidden { display: none; }
+.share-sheet { position: fixed; inset: 0; z-index: 9999; }
+
+/* 배경 */
+.share-sheet .backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.share-sheet.show .backdrop { opacity: 1; }
+
+/* 시트 본체 */
+.share-sheet .sheet {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  padding: 14px 16px 8px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,.12);
+  z-index: 2;
+
+  transform: translateY(100%);       /* 처음엔 화면 밖 */
+  transition: transform 0.3s ease;   /* 올라오는 효과 */
+}
+.share-sheet.show .sheet {
+  transform: translateY(0);          /* 올라와서 제자리 */
+}
+
+/* 버튼 디자인 그대로 */
+.share-sheet .opt {
+  display:block; width:100%; padding:14px 10px;
+  font-size:16px; text-align:center;
+  border:none; background:#f7f7f7;
+  border-radius:10px; margin-bottom:10px;
+}
+.share-sheet .opt.cancel { background:#fff; color:#777; }
+
+
+
+
+/* 모바일 반응형 대응 */
 @media (max-width: 400px) {
 }
 

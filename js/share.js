@@ -1,62 +1,86 @@
-const btnEl = document.querySelector('.share-or-copy')
+const btnEl = document.querySelector('.share-or-copy');
+const sheetEl = document.getElementById('share-sheet');
 
-// 각 지원 기능 확인
-const isSupportedShare = !!navigator?.share
-const isSupportedClipboard = !!navigator?.clipboard
-const isSupportedClipboardCommand = document.queryCommandSupported?.('copy')
+const isSupportedClipboard = !!navigator?.clipboard;
+const isSupportedClipboardCommand = document.queryCommandSupported?.('copy');
 
-// 공유 및 복사 기능 상태 체크
-const healthEl = document.createElement('div')
-healthEl.style.display = 'none'
-healthEl.innerHTML = `s: ${isSupportedShare}, c: ${isSupportedClipboard}, cc: ${isSupportedClipboardCommand}`
-document.body.append(healthEl)
-
-// 모바일 브라우저 내장 공유 기능
-async function startNativeShare() {
-  await navigator.share({
-    title: '나와 찰떡인 에그타르트 찾기!',
-    text: '나는 어떤 맛일까? 내 안에 숨어있는 에그타르트를 찾아보세요!',
-    url: 'https://hojakjil-test.netlify.app/?utm_source=result&utm_medium=share_btn_click&utm_campaign=promotion' // 현재 페이지 주소!
-  })
+// 시트 열기/닫기
+function openSheet(){
+  sheetEl?.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    sheetEl?.classList.add('show');
+  });
 }
 
-// 주소 복사 기능
-async function copyToClipboard() {
-  // 레거시 우선
-  if (isSupportedClipboardCommand) {
-    const textarea = document.createElement('textarea')
-    textarea.style.position = 'fixed'
-    textarea.style.top = 0
-    textarea.style.left = 0
-    textarea.value = 'https://hojakjil-test.netlify.app/?utm_source=result&utm_medium=share_btn_click&utm_campaign=promotion'
+function closeSheet(){
+  sheetEl?.classList.remove('show');
+  setTimeout(() => { sheetEl?.classList.add('hidden'); }, 300);
+}
 
-    document.body.appendChild(textarea)
-    textarea.focus()
-    textarea.select()
 
-    document.execCommand('copy')
-    document.body.removeChild(textarea)
-    alert('링크를 복사했어요')
-    return
-  }
-  if (isSupportedClipboard) {
-    await navigator.clipboard.writeText('https://hojakjil-test.netlify.app/?utm_source=result&utm_medium=share_btn_click&utm_campaign=promotion')
-    alert('링크를 복사했어요')
+// 링크 복사
+async function copyLink() {
+  const url = window.shareMeta?.buildShareUrl('copy') || location.href;
+  try {
+    if (isSupportedClipboard) {
+      await navigator.clipboard.writeText(url);
+    } else if (isSupportedClipboardCommand) {
+      const ta = document.createElement('textarea');
+      ta.style.position='fixed'; ta.style.opacity='0'; ta.value = url;
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+    } else { throw new Error('no clipboard'); }
+    alert('링크를 복사했어요!');
+    window.gtag?.('event','share_click',{ method:'copy', content_id: window.shareMeta?.resultId, content_type:'result' });
+  } catch {
+    alert('복사가 안 되면 주소창의 URL을 직접 복사해주세요!');
   }
 }
 
-// 모든 기능이 없는 경우 공유 버튼 제거
-if (!isSupportedShare && !isSupportedClipboard && !isSupportedClipboardCommand) {
-  btnEl.style.display = 'none'
+// 이미지로 공유 (Web Share API + 폴백: 이미지 저장 + 링크 복사)
+async function shareImage() {
+  const meta = window.shareMeta;
+  if (!meta) return copyLink();
+
+  const shareUrl = meta.buildShareUrl('image');
+
+  try {
+    const res = await fetch(meta.imageUrl);
+    const blob = await res.blob();
+    const file = new File([blob], `hojakjil_result.jpg`, { type: blob.type });
+
+    if (navigator.canShare && navigator.canShare({ files:[file] })) {
+      await navigator.share({
+        url: shareUrl,   // ✅ 링크
+        files:[file]     // ✅ 이미지 파일
+      });
+      window.gtag?.('event','share_success',{
+        method:'image',
+        content_id: meta.resultId,
+        content_type:'result',
+        ab_test_group: window.AB_TEST_GROUP
+      });
+    } else {
+      // 폴백: 이미지 저장 + 링크 복사
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `hojakjil_${meta.resultId}.jpg`;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+      await copyLink();
+      alert('이미지를 저장하고 링크도 복사했어요! SNS에 사진 업로드 후 링크를 텍스트로 붙여 넣어주세요.');
+    }
+  } catch (e) {
+    console.error(e);
+    await copyLink();
+  }
 }
 
-// 공유 버튼을 클릭했을 떄
-btnEl?.addEventListener('click', async function () {
-  if (isSupportedShare) {
-    await startNativeShare()
-    return
-  }
-  if (isSupportedClipboard || isSupportedClipboardCommand) {
-    await copyToClipboard()
-  }
-})
+// 단일 버튼 눌렀을 때 → 옵션 시트 열기
+btnEl?.addEventListener('click', openSheet);
+
+// 옵션 시트 버튼들
+sheetEl?.querySelector('.opt.image')?.addEventListener('click', () => { closeSheet(); shareImage(); });
+sheetEl?.querySelector('.opt.copy')?.addEventListener('click', () => { closeSheet(); copyLink(); });
+sheetEl?.querySelector('.opt.cancel')?.addEventListener('click', closeSheet);
+sheetEl?.querySelector('.backdrop')?.addEventListener('click', closeSheet);

@@ -10,16 +10,29 @@
     gtag('config', 'G-QT1Z2YP647');
   </script>
 
-  <!-- GA user_property 설정 (기존 사용자 구분을 위해서 하드코딩)-->
+  <!-- GA user_property & A/B 그룹 랜덤 배정 -->
   <script>
+    // 1) A/B 그룹 랜덤 배정 (지금은 original만)
+    let AB_TEST_GROUP = localStorage.getItem('ab_test_group');
+    if (!AB_TEST_GROUP) {
+      const variants = ['original'];   // ✅ 지금은 original만, 추후 ['original','variant1','variant2']
+      AB_TEST_GROUP = variants[Math.floor(Math.random() * variants.length)];
+      localStorage.setItem('ab_test_group', AB_TEST_GROUP);
+    }
+
+    // 2) GA user_property 등록 (custom dimension 연동됨)
     gtag('set', 'user_properties', {
-      ab_test_group: 'original'
+      ab_test_group: AB_TEST_GROUP
     });
 
+    // 3) 페이지 로드 이벤트
     gtag('event', 'page_loaded', {
-      ab_test_group: 'original',
+      ab_test_group: AB_TEST_GROUP,
       event_category: 'ab_test'
     });
+
+    // 4) 다른 JS 파일에서도 사용할 수 있도록 전역 변수 세팅
+    window.AB_TEST_GROUP = AB_TEST_GROUP;
   </script>
 
   <!-- GTM -->
@@ -89,6 +102,18 @@
 
     <!-- 버튼들 -->
     <div class="share_btn share-or-copy">친구에게 공유하기</div>
+
+    <!-- 옵션 시트 -->
+    <div id="share-sheet" class="share-sheet hidden">
+      <div class="sheet">
+        <button class="opt image">🖼️ 이미지로 공유</button>
+        <button class="opt copy">🔗 링크 복사</button>
+        <button class="opt cancel">취소</button>
+      </div>
+      <div class="backdrop"></div>
+    </div>
+
+
     <a href="/" class="retest_btn">다시 테스트하기</a>
   </div>
 </body>
