@@ -135,17 +135,28 @@ body {
     color: #000000 !important;
   }
 
-  .header_bar,
-  .question_box,
-  .progress,
-  .share_btn,
-  .retest_btn,
-  .smartstore_CTA_btn,
-  .start_btn,
-  .question_btn {
+  .progress {
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .question_box {
     background-color: #ffffff !important;
     color: #000000 !important;
-    box-shadow: none !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .question_box .number {
+    color: #FF8D00 !important;
+  }
+
+  .question_box .question {
+    color: #000000 !important;
+  }
+
+  .question_btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
   }
 
   img,
@@ -155,12 +166,5 @@ body {
   .detail_img {
     filter: none !important;
     mix-blend-mode: normal !important;
-  }
-
-  .intro_title1,
-  .intro_title2,
-  .question_box .question,
-  .question_box .number {
-    color: #000000 !important;
   }
 }

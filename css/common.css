@@ -220,40 +220,39 @@ body {
     }
   }
 
-
-/* 다크모드 무효 */
+  /* 다크모드 무효 */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: rgb(255, 244, 207) !important;
     color: #000000 !important;
   }
 
-  .header_bar,
-  .question_box,
-  .progress,
-  .share_btn,
-  .retest_btn,
-  .smartstore_CTA_btn,
-  .start_btn,
-  .question_btn {
+  .header_bar {
     background-color: #ffffff !important;
     color: #000000 !important;
-    box-shadow: none !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .intro_title1 {
+    color: #FF8D00 !important;
+  }
+
+  .intro_title2 {
+    color: #000000 !important;
+  }
+
+  .start_btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  .click_visual {
+    filter: none !important;
   }
 
   img,
-  .result_img,
-  .smartstore_visual,
-  .smartstore_visual2,
-  .detail_img {
+  .type img {
     filter: none !important;
     mix-blend-mode: normal !important;
-  }
-
-  .intro_title1,
-  .intro_title2,
-  .question_box .question,
-  .question_box .number {
-    color: #000000 !important;
   }
 }

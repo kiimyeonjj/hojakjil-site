@@ -121,32 +121,27 @@ body {
     color: #000000 !important;
   }
 
-  .header_bar,
-  .question_box,
-  .progress,
-  .share_btn,
-  .retest_btn,
-  .smartstore_CTA_btn,
-  .start_btn,
-  .question_btn {
-    background-color: #ffffff !important;
+  .share_btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  .retest_btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+
+  .smartstore_CTA_btn {
+    background-color: #FF8D00 !important;
     color: #000000 !important;
-    box-shadow: none !important;
   }
 
   img,
   .result_img,
-  .smartstore_visual,
+  .smartstore_visual1,
   .smartstore_visual2,
   .detail_img {
     filter: none !important;
     mix-blend-mode: normal !important;
-  }
-
-  .intro_title1,
-  .intro_title2,
-  .question_box .question,
-  .question_box .number {
-    color: #000000 !important;
   }
 }
