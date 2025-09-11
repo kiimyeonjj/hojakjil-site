@@ -72,6 +72,7 @@ async function shareImage() {
     }
   } catch (e) {
     console.error(e);
+    gtag('event', 'share_fail', { method: 'image', error: e.message });
     await copyLink();
   }
 }

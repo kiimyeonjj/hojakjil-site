@@ -49,20 +49,28 @@ document.addEventListener('DOMContentLoaded', () => {
       gtag('event', 'question_view', {
         question_number: question.number,
         question_index: currentNumber + 1,
-        event_category: 'progress',
         event_label: '질문 도달',
         value: currentNumber + 1
       });
     }
   }
 
-  // 다음 질문으로 이동
   function nextQuestion(choiceNumber) {
     const question = questions[currentNumber];
-    const value = question.choices[choiceNumber].value;
-    mbti += value;
+    const choice = question.choices[choiceNumber];
 
-    console.log(`[Q${currentNumber + 1}] 선택값: ${value} → 누적 MBTI: ${mbti}`);
+    // 응답 이벤트 기록
+    gtag('event', 'question_answer', {
+      question_index: currentNumber + 1,
+      question_text: question.question,          // 선택 사항 (문항 내용도 저장)
+      choice_text: choice.text,                  // 보기 텍스트
+      choice_value: choice.value,                // MBTI 값 (e/i/s/n/t/f/j/p)
+      ab_test_group: window.AB_TEST_GROUP || 'original'
+    });
+
+    // MBTI 누적 처리
+    mbti += choice.value;
+    console.log(`[Q${currentNumber + 1}] 선택값: ${choice.value} → 누적 MBTI: ${mbti}`);
 
     if (currentNumber === questions.length - 1) {
       showResultPage();
